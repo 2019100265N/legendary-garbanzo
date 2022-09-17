@@ -8,7 +8,9 @@
                 echo "Thanks for your selection " . $_POST['username'];
                 echo "</br>You really enjoy " . $_POST['dish'] . "</br>- especially with a nice " . $_POST['color'] . " wine";
             } else {
+
                 if(empty($_POST['username'])) {
+                    
                     echo 'Username is not set</br>';
                 }
                 if(empty($_POST['color'])) {
