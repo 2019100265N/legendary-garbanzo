@@ -10,26 +10,26 @@
     if (is_numeric($_POST['val1']) && is_numeric($_POST['val2'])) {
         # test if calc is not null
         if (isset($_POST['calc'])) {
-            $val1 = $_POST['val1'];
-            $val2 = $_POST['val2'];
-            $calc = $_POST['calc'];
-            $answer = 0;
-            # switch statement for value of calc
-            switch ($calc) {
-                case 'add':
-                    $answer = $val1 + $val2;
-                    break;
-                case 'sub':
-                    $answer = $val1 - $val2;
-                    break;
-                case 'mul':
-                    $answer = $val1 * $val2;
-                    break;
-                case 'div':
-                    $answer = $val1 / $val2;
-                    break;
+       
+                switch($_POST['calc']){
+                    case 'add':
+                               $result = $_POST['val1'] + $_POST['val2'];
+                              break;
+                    case 'sub':
+                        $result = $_POST['val1'] - $_POST['val2'];
+                          break;
+                    case 'mul':
+                        $result = $_POST['val1']* $_POST['val2'];
+                           # code...
+                              break;
+                    case 'div':
+                        $result = $_POST['val1'] / $_POST['val2'];
+                               # code...
+                                  break;
+     
             }
-            echo "Calculation result: $answer";
+
+            echo "Calculation result: $result";
         }
     } else {
         echo "Invalid entry - please retry";
