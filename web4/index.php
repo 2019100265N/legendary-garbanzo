@@ -5,8 +5,8 @@ if (isset($_POST['submit'])) {
         echo 'Please enter a valid username and password';
     } else {
         $username = htmlentities($_POST['username']);
-        setcookie('username', $username, time() + 3600);
         setcookie('auth', 'ok', time() + 3600);
+        setcookie('username', $username, time() + 3600);
         header('Location: loggedin.php');
     }
 }

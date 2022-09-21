@@ -1,12 +1,12 @@
 <?php
-if (!isset($_COOKIE['auth']) || $_COOKIE['auth'] != 'ok') {
+if (isset($_COOKIE['auth']) == false || $_COOKIE['auth'] != 'ok') {
     header('Location: index.php');
 }
 
-if (isset($_COOKIE['username'])) {
-    echo 'User ' . $_COOKIE['username'] . ' is set<br>';
-} else {
+if (!isset($_COOKIE['username'])) {
     echo 'User is not set';
+} else {
+    echo 'User ' . $_COOKIE['username'] . ' is set<br>';
 }
 ?>
 
